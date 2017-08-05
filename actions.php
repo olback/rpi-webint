@@ -9,11 +9,11 @@
     }
 
     if($_GET['action'] == "shutdown"){
-        shell_exec("shutdown now");
+        shell_exec("sudo shutdown now");
     }
 
     if($_GET['action'] == "reboot"){
-        shell_exec("reboot now");
+        shell_exec("sudo reboot now");
     }
 
 ?>
