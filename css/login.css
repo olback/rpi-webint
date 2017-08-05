@@ -1,0 +1,69 @@
+/*
+ * CSS for the login page.
+ */
+
+* {
+    font-family: Helvetica, Arial, Verdana, sans-serif;
+}
+
+
+body {
+    background: hsla(80,29%,89%,1);
+}
+
+.main {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-weight: bold;
+}
+
+input {
+    height: 3em;
+    width: 20em;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 0.5em;
+    text-align: center;
+    font-size: 100%;
+}
+
+button {
+    border-radius: 4px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    height: 3em;
+    width: 20em;
+    margin-top: 1em;
+    transition: background-color .15s ease-in-out;
+    -moz-transition: background-color .15s ease-in-out;
+    -webkit-transition: background-color .15s ease-in-out;
+}
+
+button:hover {
+    background-color: #45a049;
+    transition: background-color .15s ease-in-out;
+    -moz-transition: background-color .15s ease-in-out;
+    -webkit-transition: background-color .15s ease-in-out;
+}
+
+.failed {
+    color: #ff3333;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+footer {
+    position: fixed;
+    bottom: 1em;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 80%;
+}
