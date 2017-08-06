@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Add user 'www-data' to sudoers file. Bad practice but it's fine if the Pi is only running on a local network.
+adduser www-data sudo
+echo "www-data ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+
+# Update
+apt-get update
+
+# Install required packages
+apt-get install lighttpd git php5-cgi -y
+
+# Clone project from GitHub
+git clone https://github.com/olback/rpi-webint.git /var/www/rpi-webint
+chown www-data:www-data /var/www/rpi-webint -R
+
+# Get lighttpd config
+mv /etc/lighttpd/lighttpd.conf /etc/lighttpd/lighttpd.conf.default
+curl -sSL https://raw.githubusercontent.com/olback/rpi-webint/master/rpi-webint.conf --output /etc/lighttpd/lighttpd.conf
+
+# Enable php
+lighttpd-enable-mod fastcgi fastcgi-php
+
+# Remove files from /var/web/rpi-webint
+rm /var/www/rpi-webint/rpi-webint.conf
+rm /var/www/rpi-webint/rpi-webint.install
+rm -rf /var/www/rpi-webint/.gitignore
+
+# Reload lighttpd
+/etc/init.d/lighttpd force-reload
+
+# Restart lighttpd
+systemctl lighttpd Restart
+
+echo "Done!"
