@@ -8,7 +8,7 @@ echo "www-data ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 apt-get update
 
 # Install required packages
-apt-get install lighttpd git php5-cgi -y
+apt-get install lighttpd git php5-cgi wiringpi -y
 
 # Clone project from GitHub
 git clone https://github.com/olback/rpi-webint.git /var/www/rpi-webint
