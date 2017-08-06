@@ -29,7 +29,4 @@ rm -rf /var/www/rpi-webint/.gitignore
 # Reload lighttpd
 /etc/init.d/lighttpd force-reload
 
-# Restart lighttpd
-service lighttpd restart
-
 echo "Done!"
