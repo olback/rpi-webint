@@ -1,7 +1,7 @@
 <?php
 
-$username = "olback";
-$password = "1234";
+$username = "placeholder";
+$password = "placeholder";
 
 $gitURL = "https://github.com/olback/rpi-webint";
 
