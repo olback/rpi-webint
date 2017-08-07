@@ -16,4 +16,29 @@
         shell_exec("sudo reboot now");
     }
 
+    if($_GET['action'] == "main"){
+        $_SESSION['page'] = "main";
+        Header("Location: ./");
+        die();
+    }
+
+    if($_GET['action'] == "gpio"){
+        $_SESSION['page'] = "gpio";
+        Header("Location: ./");
+        die();
+    }
+
+    if($_GET['action'] == "about"){
+        $_SESSION['page'] = "about";
+        Header("Location: ./");
+        die();
+    }
+
+    if($_GET['action'] == "logoff"){
+        session_start();
+        $_SESSION['username'] = NULL;
+        session_destroy();
+        Header("Location: ./");
+        die();
+    }
 ?>

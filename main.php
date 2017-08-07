@@ -7,7 +7,8 @@
         Header("Location: ./");
         die();
     }
-
+?>
+<?php
 // Storage:
 $storage_pr = shell_exec("df -k | grep /dev/root | awk '{print $5}'");
 $storage_used = shell_exec("df -k | grep /dev/root | awk '{print $3}'");
@@ -47,84 +48,15 @@ $swap = $swap_used . " / ". $swap_total . " GB";
 
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>RPi - Webint</title>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/font-awesome.min.css" rel="stylesheet">
-	<link href="css/styles.css" rel="stylesheet">
-	
-	<!--Custom Font-->
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<!--[if lt IE 9]>
-	<script src="js/html5shiv.js"></script>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-</head>
-<body>
-	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse"><span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span></button>
-				<a class="navbar-brand" href="#"><span>RPi</span> Web Interface</a>
-				<ul class="nav navbar-top-links navbar-right">
-					<li class="dropdown">
-						<a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-							<em class="fa fa-gear"></em>
-						</a>
-						<ul class="dropdown-menu dropdown-alerts" style="background-color: white;">
-							
-							<li>
-							  <a href="actions.php?action=shutdown">
-								<div><em class="fa fa-power-off"></em>Shut down</div>
-							  </a>
-							</li>
 
-							<li class="divider"></li>
-							
-							<li>
-							  <a href="actions.php?action=reboot">
-								<div><em class="fa fa-repeat"></em>Reboot</div>
-							  </a>
-							</li>
-
-						</ul>
-					</li>
-				</ul>
-			</div>
-		</div><!-- /.container-fluid -->
-	</nav>
-	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-		<div class="profile-sidebar">
-			<div class="profile-userpic">
-				<img src="img/user.png" class="img-responsive" alt="">
-			</div>
-			<div class="profile-usertitle">
-				<div class="profile-usertitle-name"><?php echo $username; ?></div>
-				<div class="profile-usertitle-status"><span class="indicator label-success"></span>PI Online</div>
-			</div>
-			<div class="clear"></div>
-		</div>
-		<div class="divider"></div>
-		<ul class="nav menu">
-			<li class="active"><a href="index.html"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
-			<li><a href="#"><em class="fa fa-toggle-off">&nbsp;</em> GPIO<span class="soon"> (Comming soon)</span></a></li>
-			<li><a href="#"><em class="fa fa-info-circle">&nbsp;</em> About<span class="soon"> (Comming soon)</span></a></li>
-			<li><a href="logout.php"><em class="fa fa-sign-out">&nbsp;</em> Logout</a></li>
-		</ul>
-	</div><!--/.sidebar-->
+<?php require __dir__ . '/res/head.php'; ?>
+<?php $_SESSION['page'] = "main"; ?>
+<?php require __dir__ . '/res/nav.php'; ?>
 		
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
 			<ol class="breadcrumb">
-				<li><a href="#">
+				<li><a href="./actions.php?action=main">
 					<em class="fa fa-home"></em>
 				</a></li>
 				<li class="active">Dashboard</li>
@@ -208,17 +140,9 @@ $swap = $swap_used . " / ". $swap_total . " GB";
 			</div><!--/.row-->
 		</div>
 		<!--/.main-->
+
+		<script src="js/realtime.js"></script>
 	
-	<!--<script src="js/jquery-1.11.1.min.js"></script>-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<!--<script src="js/chart.min.js"></script>-->
-	<!--<script src="js/chart-data.js"></script>-->
-	<script src="js/easypiechart.js"></script>
-	<script src="js/easypiechart-data.js"></script>
-	<script src="js/bootstrap-datepicker.js"></script>
-    <script src="js/custom.js"></script>
-    <script src="js/realtime.js"></script>
-		
-</body>
-</html>
+	
+<?php require __dir__ . '/res/scripts.php'; ?>		
+<?php require __dir__ . '/res/footer.php'; ?>
