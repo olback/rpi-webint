@@ -3,7 +3,7 @@
 ### Installation
 1. `curl -sSL https://raw.githubusercontent.com/olback/rpi-webint/master/rpi-webint.install | bash`
 
-2. Edit `config.php`. <br>Set a password and a username.
+2. Edit `config.php`. Set a password and a username.
 
 <br>
 
@@ -17,5 +17,5 @@ If you find a bug please report it. You can do so by clicking [issues](https://g
 
 2. The installation script will also create a new lighttpd config and replace the current one.
 
-3. Packages that get installed during installation:<br>
+3. Packages that get installed during installation:
 `lighttpd git php5-cgi wiringpi`
