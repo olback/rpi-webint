@@ -30,6 +30,7 @@
 				<h1 class="page-header">About</h1>
 			</div>
 		</div><!--/.row-->
+        <?php require __dir__ . '/res/noscript.php'; ?>
 
         <h2>Networking</h2>
 

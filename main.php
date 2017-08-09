@@ -68,6 +68,7 @@ $swap = $swap_used . " / ". $swap_total . " GB";
 				<h1 class="page-header">Dashboard</h1>
 			</div>
 		</div><!--/.row-->
+		<?php require __dir__ . '/res/noscript.php'; ?>
 		
 		<div class="row">
 			<div class="col-xs-6 col-md-3">

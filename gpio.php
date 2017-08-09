@@ -25,7 +25,12 @@
 			</ol>
 		</div><!--/.row-->
         
-        <h1>GPIO Comming Soon</h1>
+        <div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header">GPIO Comming Soon!</h1>
+			</div>
+		</div><!--/.row-->
+		<?php require __dir__ . '/res/noscript.php'; ?>
 	</div>
 	<!--/.main-->
 	
