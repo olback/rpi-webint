@@ -12,8 +12,8 @@ apt-get install lighttpd git php5-cgi wiringpi -y
 
 # Clone project from GitHub
 mkdir /var/www/rpi-webint
-git init /var/www/rpi-webint
 git clone https://github.com/olback/rpi-webint.git /var/www/rpi-webint
+git init /var/www/rpi-webint
 chown www-data:www-data /var/www/rpi-webint -R
 
 # Get lighttpd config
@@ -26,9 +26,9 @@ lighttpd-enable-mod fastcgi fastcgi-php
 # Remove files from /var/web/rpi-webint
 rm /var/www/rpi-webint/rpi-webint.conf
 rm /var/www/rpi-webint/rpi-webint.install
-rm -rf /var/www/rpi-webint/.gitignore
 
 # Reload lighttpd
 /etc/init.d/lighttpd force-reload
 
-echo "Done!"
+echo "Done!"\n
+echo "Remember to edit /var/www/config.php!"

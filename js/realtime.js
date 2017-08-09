@@ -62,22 +62,8 @@ if(typeof(EventSource) !== "undefined") {
     notSupported = true;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// TODO: Add modal.
 if(notSupported == true) {
-    console.log("Your browser is not supported. Try with Chrome or FireFox instead.")
+    var ie_edge = document.getElementById("ie_edge");
+    ie_edge.style.display = "block";
+    console.log("Your browser is not supported. Try with Chrome or FireFox instead.");
 }
