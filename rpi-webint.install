@@ -11,6 +11,8 @@ apt-get update
 apt-get install lighttpd git php5-cgi wiringpi -y
 
 # Clone project from GitHub
+mkdir /var/www/rpi-webint
+git init /var/www/rpi-webint
 git clone https://github.com/olback/rpi-webint.git /var/www/rpi-webint
 chown www-data:www-data /var/www/rpi-webint -R
 
