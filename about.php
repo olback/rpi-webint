@@ -71,12 +71,12 @@
 
                                 <tr>
                                 <th scope="row">DNS</th>
-                                <td><?php echo $eth0[5];?></td>
+                                <td><?php echo $system[3];?></td>
                                 </tr>
 
                                 <tr>
                                 <th scope="row">MAC Address</th>
-                                <td><?php echo $eth0[6];?></td>
+                                <td><?php echo $eth0[5];?></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -121,12 +121,12 @@
 
                                 <tr>
                                 <th scope="row">DNS</th>
-                                <td><?php echo $wlan0[5];?></td>
+                                <td><?php echo $system[3];?></td>
                                 </tr>
 
                                 <tr>
                                 <th scope="row">MAC Address</th>
-                                <td><?php echo $wlan0[6];?></td>
+                                <td><?php echo $wlan0[5];?></td>
                                 </tr>
                             </tbody>
                         </table>

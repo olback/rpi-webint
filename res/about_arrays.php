@@ -6,7 +6,6 @@ $eth0 = array(
     shell_exec("ifconfig eth0 | grep Mask | awk '{print $4}' | cut -c 6-"), // Subnetmask
     shell_exec("route -n | awk '{print $2}' | grep -v '0.0.0.0' | tail -1"), // Gateway
     shell_exec("ifconfig eth0 | grep Bcast | awk '{print $3}' | cut -c 7-"), // Broadcast
-    shell_exec("cat /etc/resolv.conf | grep nameserver | awk '{print $2}'"), // DNS
     shell_exec("ifconfig eth0 | grep HWaddr | awk '{print $5}'"), // MAC Address
 );
 
@@ -17,7 +16,6 @@ $wlan0 = array(
     shell_exec("ifconfig wlan0 | grep Mask | awk '{print $4}' | cut -c 6-"), // Subnetmask
     shell_exec("route -n | awk '{print $2}' | grep -v '0.0.0.0' | tail -1"), // Gateway
     shell_exec("ifconfig wlan0 | grep Bcast | awk '{print $3}' | cut -c 7-"), // Broadcast
-    shell_exec("cat /etc/resolv.conf | grep nameserver | awk '{print $2}'"), // DNS
     shell_exec("ifconfig wlan0 | grep HWaddr | awk '{print $5}'"), // MAC Address
 );
 
@@ -33,6 +31,7 @@ $system = array(
     shell_exec("cat /etc/hostname"), // Hostname
     shell_exec("cat /proc/uptime | awk '{print $1}'"), // Uptime in seconds
     shell_exec("cat /proc/cpuinfo | grep Revision | awk '{print $3}'"), // Get Raspberry revision
+    rtrim(str_replace("\n", "&nbsp|&nbsp", shell_exec("cat /etc/resolv.conf | grep nameserver | awk '{print $2}'")), "&nbsp|&nbsp"), // DNS
 );
 
 // Convert uptime from seconds to days.
